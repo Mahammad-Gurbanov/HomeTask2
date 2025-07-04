@@ -1,4 +1,4 @@
-package classtask2;
+package classtasks;
 
 import java.util.Scanner;
 
@@ -59,7 +59,5 @@ public class ClassTask2 {
                 "lot. So, " + "please drink less coffee try some tea instead.");
 
         scanner.close();
-
-
     }
 }
