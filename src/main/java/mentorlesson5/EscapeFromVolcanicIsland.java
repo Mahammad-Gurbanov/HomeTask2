@@ -91,6 +91,32 @@ public class EscapeFromVolcanicIsland {
                     // Else the game will stop
                 else break;
             }
+            // The scene which the player reads the wooden sign
+            System.out.println("You see a collection of names carved into the wood 🪵");
+            System.out.println("Some marked as *Winners*, others as *Losers*.");
+            System.out.println(" Below them, one final empty line waits...");
+            System.out.println("It's inviting you to carve your name into it.");
+            System.out.print("Please enter your name: ");
+            String player = scanner.nextLine();
+
+
+            System.out.println("🤖 *Whirr... Click...*");
+            System.out.println("🔊 *Tsssss...* Something is moving beneath the sand...");
+            System.out.println("🚨 *POP!* A strange, futuristic-looking tube shoots up from beneath the ground, hissing with steam.");
+            System.out.println("Inside, you spot an envelope sealed with a metallic stamp.");
+
+            System.out.println("\nYou're filled with curiosity and questions as you reach for it...");
+            System.out.println("📩 You open the envelope and begin to read:\n");
+
+            // Scene where the rules are displayed
+            System.out.println("Dear " + player + ",\n");
+            System.out.println("You have been chosen to participate in our game: *Escape the Volcanic Island*.");
+            System.out.println("This game consists of 4 unique zones, each with its own challenges.");
+            System.out.println("🏝️ Complete challenges to earn points — and those points will become money... if you escape.");
+            System.out.println("⚠️ But be careful: one mistake means you will lose points in that game.");
+            System.out.println("💡 Energy is everything. Without it, you won’t be able to move, complete challenges, or escape.");
+            System.out.println("Before each zone begins, you’ll be briefed on the rules.");
+            System.out.println("GOOD LUCK... and save as much energy as you can.");
 
             break;
 
