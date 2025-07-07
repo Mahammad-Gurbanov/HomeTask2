@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class EscapeFromVolcanicIsland {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        gameLoop: while (true) {
             // Initialize some variables
             boolean tryAgain = false;
             int energyLevel = 100;
+            int points = 0;
             // Set up a starting scene
             System.out.println("🌊 *Whooosh...* Gentle waves crash against the shore, mingled with distant cries of seagulls echoing in the wind...");
             System.out.println("👁️‍🗨️ Slowly, your eyes begin to open... light pierces through the blur as the world fades into focus.");
@@ -94,7 +95,7 @@ public class EscapeFromVolcanicIsland {
             // The scene which the player reads the wooden sign
             System.out.println("You see a collection of names carved into the wood 🪵");
             System.out.println("Some marked as *Winners*, others as *Losers*.");
-            System.out.println(" Below them, one final empty line waits...");
+            System.out.println("Below them, one final empty line waits...");
             System.out.println("It's inviting you to carve your name into it.");
             System.out.print("Please enter your name: ");
             String player = scanner.nextLine();
@@ -141,6 +142,7 @@ public class EscapeFromVolcanicIsland {
             System.out.print("🔢 Please type your answer: ");
 
             int playerAnswer = scanner.nextInt();
+            scanner.nextLine();
 
             if (playerAnswer == 16){
                 System.out.println("🔊 *Krrrk... Vrrrrr...* A hidden garage door rumbles open in the side of the mountain.");
@@ -161,8 +163,9 @@ public class EscapeFromVolcanicIsland {
                 System.out.println("But there's no time to dwell — you begin the long walk through the valley.");
                 energyLevel -= 20;
 
-                // check if energy level is below and player is frustrated
+
             }
+            // Check if the game can continue
             if (energyLevel <= 0){
                 System.out.println("😓 After a long and frustrating walk, your energy is completely drained.");
                 System.out.println("You collapse to the ground — unable to move a muscle.");
@@ -173,10 +176,111 @@ public class EscapeFromVolcanicIsland {
                 tryAgain = scanner.nextBoolean();
                 // Catch \n character in the buffer
                 scanner.nextLine();
-
+                // Check if the user wants to restart the game
                 if (tryAgain) continue;
                 else break;
             }
+            System.out.println("Your energy level is now: " + energyLevel);
+
+            // Zone 2: Dark Cave
+            System.out.println("\nAs you make your way out of the valley, a dark cave comes into view.");
+            System.out.println("At its entrance stands a familiar wooden sign you've seen many times before.");
+            System.out.println("You step closer to read it. It says: \"Dark Cave\".");
+
+            System.out.println("\nYou take a deep breath and enter the cave, venturing deeper into the shadows.");
+            System.out.println("The light fades behind you, and soon you're standing in pitch-black darkness.");
+            System.out.println("😵 Confused and disoriented, the pressure and heat inside the cave begin to close in on you.");
+
+            System.out.println("In frustration and fear, you scream: \"WHAT SHOULD I DOOO?!\"");
+
+            System.out.println("\n🔥 Suddenly, a line of torches ignites on both sides of the cave walls, lighting your path.");
+            System.out.println("You follow the glowing trail, and at the end, you find a chest surrounded by the flickering torches.");
+            System.out.println("Inside the chest, there's a torch... and a sealed envelope.");
+            System.out.println("📜 You open the envelope and begin to read...");
+
+            System.out.println("📜 The envelope reads:\n");
+            System.out.println("Welcome to the Dark Cave!");
+
+            System.out.println("In this challenge, you'll need to navigate your way through a maze we’ve carefully constructed.");
+            System.out.println("The maze consists of five turns — left or right — and you must choose the correct direction at each point to escape.");
+
+            System.out.println("\n🌡️ Beware: the extreme heat inside this cave will drain your energy.");
+            System.out.println("If you choose the correct path, you'll walk for about 10 minutes and reach the next turn.");
+            System.out.println("But if you choose incorrectly... you’ll walk 10 minutes, only to find a dead end. HAHAHA!");
+
+            System.out.println("\nEvery 10 minutes in this heat will reduce your energy by 5 points.");
+            System.out.println("So:");
+            System.out.println("✔️ Correct path → -5 energy points");
+            System.out.println("❌ Incorrect path → -10 energy points (5 there + 5 back)");
+
+            System.out.println("\nGiven the difficulty of this maze, successfully escaping will earn you *30 points*.");
+            System.out.println("Good luck. Take the torch and light it using one of the flames nearby — you'll need it to see the path ahead.");
+
+            System.out.println("So you light up the torch, start walking to " +
+                    "see the first part of the maze");
+
+            // This variable will also help to track which turn the user is in
+            int correctGuesses = 0;
+            // Variable to keep track of user choice
+            char userChoice;
+            while (correctGuesses < 5) {
+                // I specifically used a do while loop, just to get some
+                // practice
+                int turnNumber = correctGuesses + 1;
+                System.out.println("Turn: " + turnNumber);
+                do {
+                    System.out.println("🔀 Enter your direction: 'l' for left, 'r' for right.");
+                    System.out.println("⚠️ If you enter anything else, you'll lose 1 energy point.");
+                    System.out.println("Your choice: ");
+                    userChoice = scanner.nextLine().charAt(0);
+
+                    if (userChoice == 'l' || userChoice == 'r') break;
+                    else energyLevel -= 1;
+                } while (true);
+
+                // Based on the decision, change energy level and print
+                // a message
+                char correctTurn = switch (turnNumber) {
+                    case 1, 5 -> 'l';
+                    case 2, 3, 4 -> 'r';
+                    // default E will help to track possible internal errors
+                    default -> 'E';
+                };
+                if (correctTurn == 'E') {
+                    System.out.println("\n\nSomething went wrong, Error!!");
+                    break;
+                }
+                if (userChoice == correctTurn) {
+                    energyLevel -= 5;
+                    correctGuesses++;
+                    System.out.println("✅ You walk for 10 minutes and realize you’re on the right path. Awesome!");
+
+
+                } else {
+                    energyLevel -= 10;
+                    System.out.println("❌ After 10 minutes, you hit a dead end. Frustrated, you turn back the way you came.");
+
+                }
+                if (energyLevel <= 0) {
+                    System.out.println("Looks like all that walking and the heat caught up to you.");
+                    System.out.println("Suddenly, your vision darkens, and you struggle to stay on your feet.");
+                    System.out.println("You’ve run out of energy to move.");
+                    System.out.println("💀 GAME OVER!!");
+                    System.out.print("Would you like to try again? (true/false): ");
+                    tryAgain = scanner.nextBoolean();
+                    // Catch \n character in the buffer
+                    scanner.nextLine();
+                    // Check if the user wants to restart the game
+                    if (tryAgain) continue gameLoop;
+                    else break gameLoop;
+                }
+                System.out.println("Your energy level is now: " + energyLevel);
+            }
+            // Player earns 30 points
+            points += 30;
+
+
+
 
 
 
