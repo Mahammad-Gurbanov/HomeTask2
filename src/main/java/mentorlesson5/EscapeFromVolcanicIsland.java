@@ -118,6 +118,69 @@ public class EscapeFromVolcanicIsland {
             System.out.println("Before each zone begins, you’ll be briefed on the rules.");
             System.out.println("GOOD LUCK... and save as much energy as you can.");
 
+            System.out.println("⬆️ After reading the letter, you notice arrow marks on the ground—");
+            System.out.println("They're made from carefully placed stones 🪨, pointing a path forward.");
+            System.out.println("You follow them, until you come across another wooden sign pinned to a large rock.");
+            System.out.println("It reads: *Zone 1 — Valley of Mathematics*.");
+            System.out.println("You step through a narrow entrance, the air growing cooler as you enter the valley..");
+
+            System.out.println("\nAfter about fifteen minutes of walking, you notice a faint carving on the right wall.");
+            System.out.println("You approach it, curiosity pulling you in.");
+
+            System.out.println("🧩 It says:");
+            System.out.println("\"If you can solve this equation, a secret garage door will open, revealing an ATV.");
+            System.out.println("With it, you'll ride past the valley in minutes and earn *10 points*.");
+            System.out.println("But if you fail... you’ll be forced to walk the entire path,");
+            System.out.println("costing you *90 minutes* and *20 energy points*.");
+            System.out.println("Choose wisely.");
+            System.out.println("When you find the answer, carve it into the wooden sign.\"");
+
+
+            System.out.println("\n🧠 You carefully scan the wall... and there it is, etched deep into the stone:");
+            System.out.println("The equation: 8 / 2(2 + 2) = ?");
+            System.out.print("🔢 Please type your answer: ");
+
+            int playerAnswer = scanner.nextInt();
+
+            if (playerAnswer == 16){
+                System.out.println("🔊 *Krrrk... Vrrrrr...* A hidden garage door rumbles open in the side of the mountain.");
+                System.out.println("*The ground shakes slightly beneath your feet...*");
+                System.out.println("\n✅ Great job! You've solved the equation correctly.");
+                System.out.println("🎉 You earn *10 points*, and now you can use the ATV to ride past the valley!");
+
+                System.out.println("\n🛞 You hop into the ATV, a grin on your face, and start the engine.");
+                System.out.println("🏞️ As you speed through the valley, the wind rushes past and you admire the beautiful, untouched scenery around you.");
+
+                points += 10;
+            } else {
+                System.out.println("❌ *BAM! BAM! BAM!* A loud buzzer echoes through the valley...");
+                System.out.println("Unfortunately, your answer is incorrect.");
+                System.out.println("🚶‍♂️ You’ll have to walk the entire distance on foot.");
+
+                System.out.println("You clench your fists in frustration, wishing you'd gotten it right...");
+                System.out.println("But there's no time to dwell — you begin the long walk through the valley.");
+                energyLevel -= 20;
+
+                // check if energy level is below and player is frustrated
+            }
+            if (energyLevel <= 0){
+                System.out.println("😓 After a long and frustrating walk, your energy is completely drained.");
+                System.out.println("You collapse to the ground — unable to move a muscle.");
+                System.out.println("You're stranded on this island... forever.");
+                System.out.println("💀 GAME OVER!!");
+                System.out.print("Would you like to try again? (true/false): ");
+
+                tryAgain = scanner.nextBoolean();
+                // Catch \n character in the buffer
+                scanner.nextLine();
+
+                if (tryAgain) continue;
+                else break;
+            }
+
+
+
+
             break;
 
 
