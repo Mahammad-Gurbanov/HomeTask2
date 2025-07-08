@@ -279,6 +279,136 @@ public class EscapeFromVolcanicIsland {
             // Player earns 30 points
             points += 30;
 
+            // Zone 3:
+            System.out.println("After successfully completing the maze challenge, you begin moving forward.");
+            System.out.println("You notice another trail of torches flickering in the darkness, guiding your path.");
+            System.out.println("As you follow them, you spot something unexpected");
+            System.out.println("🍹 A cold glass of lemonade glistens under the torchlight. Just what you needed!");
+
+
+            System.out.println("\nYou pick up the note and read:");
+            System.out.println("\"Congratulations on completing the maze! After all that walking, you've probably lost a lot of energy.");
+            System.out.println("The heat must have drained you, so drink this ice-cold, refreshing lemonade.");
+            System.out.println("It will boost your energy for the next stage — and trust me, temperature will only increase.\"");
+
+            System.out.println("\nYou drink the lemonade. The coolness rushes through your body — so refreshing!");
+            System.out.println("✨ You feel your strength returning. Your energy level increases by 10 points.");
+
+            energyLevel += 10;
+
+            System.out.println("\n🧪 Current energy level: " + energyLevel);
+            System.out.println("🎯 Total points earned: " + points);
+
+            System.out.println("\nAfter drinking the lemonade, you continue along the path.");
+            System.out.println("The temperature starts rising... and rising...");
+            System.out.println("🔥 You suddenly realize there are no more torches lighting the way.");
+            System.out.println("Instead, you find a narrow crack in the rocky wall — and a wooden sign beside it.");
+            System.out.println("It reads: *Zone 4 — The Broken Bridge*");
+
+            System.out.println("\nAs you squeeze through the crack, a dramatic sight unfolds before you:");
+            System.out.println("Two extremely long bridges stretch over a sea of bubbling lava 🌋🔥.");
+            System.out.println("Between them lies an envelope — carefully placed — with the words *The Broken Bridge* written on it.");
+
+            System.out.println("\nYou open the envelope and begin to read:");
+
+            System.out.println("\"So... you've made it this far. See how we managed to bring you from the shore...");
+            System.out.println("...all the way to the heart of the volcano?");
+            System.out.println("This is why our game is called *Escape from the Volcanic Island*.");
+
+            System.out.println("\nNow, here’s your challenge:");
+            System.out.println("There are two bridges. One of them is broken and will collapse into the lava in 30 minutes.");
+            System.out.println("If you choose that bridge, you'll be forced to come back and lose precious energy.");
+            System.out.println("The other bridge is stable and will take you to safety — if you can find it.");
+
+            System.out.println("\nYour options:");
+            System.out.println("- Cross one of the bridges now: it costs 20 energy points.");
+            System.out.println("- If you choose the wrong bridge: you'll lose 40 energy points for the round trip,");
+            System.out.println("  and then 20 more to cross the correct one  a total of 60 energy points.");
+            System.out.println("- OR you can wait 30 minutes for the faulty bridge to collapse, then take the right one safely.");
+            System.out.println("  Waiting will cost you 15 energy points.");
+
+            System.out.println("\n🩺 Your energy level will determine your health when you leave the island.");
+            System.out.println("If it’s too low, you'll need medical attention — costing you money and time.");
+            System.out.println("So make your choice wisely. Your life — and your reward *35 points* — depend on it.\"");
+
+            System.out.println("Your current energy level: " + energyLevel);
+            System.out.println("With a deep rumble and the sound of shifting stone, the gap slowly closes behind you. 🪨");
+
+            System.out.print("Type l for left bridge, r for right bridge, " +
+                    "and w for wait(else you'll loose one energy point: ");
+            char chosenOption;
+            while (true) {
+                chosenOption = scanner.nextLine().charAt(0);
+                if (chosenOption == 'l' || chosenOption == 'r' || chosenOption == 'w') break;
+                else energyLevel -= 1;
+                if (energyLevel <= 0) {
+                    System.out.println("What a way, too loose...");
+                    System.out.println("You’ve run out of energy to move.");
+                    System.out.println("💀 GAME OVER!!");
+                    System.out.print("Would you like to try again? (true/false): ");
+                    tryAgain = scanner.nextBoolean();
+                    // Catch \n character in the buffer
+                    scanner.nextLine();
+                    // Check if the user wants to restart the game
+                    if (tryAgain) continue gameLoop;
+                    else break gameLoop;
+                }
+            }
+
+            switch (chosenOption) {
+                case 'w':
+                    System.out.println("You chose the safer path and decided to wait for the faulty bridge to collapse.");
+                    System.out.println("⏳ Time passes... and suddenly — with a thunderous crash — the left bridge collapses into the lava.");
+                    System.out.println("✅ The right bridge is now safe to cross.");
+                    energyLevel -= 35;
+                    break;
+                case 'r':
+                    System.out.println("It seems you're willing to risk it for the biscuit. 🍪");
+                    System.out.println("You take a deep breath... and start walking across the bridge.");
+                    System.out.println("The heat rises around you, and the lava bubbles loudly below. 🌋");
+                    System.out.println("As you approach the other side, you realize — the bridge you chose is holding steady!");
+                    System.out.println("Behind you, the other bridge begins to collapse into the lava. 🔥");
+                    System.out.println("You made it to the other side — just in time.");
+
+                    energyLevel -= 20;
+                    break;
+                case 'l':
+                    System.out.println("It seems you're willing to risk it for the biscuit. 🍪");
+                    System.out.println("You step onto the bridge and begin walking...");
+                    System.out.println("But after a few minutes, you notice something troubling —");
+                    System.out.println("🔥 parts of the bridge are starting to catch fire!");
+                    System.out.println("Panicked, you turn around and rush back to the start as fast as you can.");
+                    System.out.println("Exhausted and shaken, you catch your breath.");
+                    System.out.println("Without wasting any more time, you head toward the other bridge — the safe one.");
+                    System.out.println("As you walk, you hear the collapsing crash of the burning bridge behind you... 🌉💥");
+
+                    energyLevel -= 60;
+                    break;
+                default:
+                    System.out.println("Something went horribly wrong, Error!");
+                    break gameLoop;
+            }
+            if (energyLevel <= 0) {
+                System.out.println("We knew from the beginning that rising " +
+                        "the temperature was going to weaken you, and know " +
+                        "after passing 2 rounds, you couldn't pass this round" +
+                        " so you are stranded here for ever.");
+                System.out.println("You’ve run out of energy to move.");
+                System.out.println("💀 GAME OVER!!");
+                System.out.print("Would you like to try again? (true/false): ");
+                tryAgain = scanner.nextBoolean();
+                // Catch \n character in the buffer
+                scanner.nextLine();
+                // Check if the user wants to restart the game
+                if (tryAgain) continue;
+                else break;
+            }
+
+
+
+
+
+
 
 
 
