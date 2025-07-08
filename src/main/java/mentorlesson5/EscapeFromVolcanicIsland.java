@@ -236,6 +236,18 @@ public class EscapeFromVolcanicIsland {
 
                     if (userChoice == 'l' || userChoice == 'r') break;
                     else energyLevel -= 1;
+                    if (energyLevel <= 0) {
+                        System.out.println("What a way, too loose...");
+                        System.out.println("You’ve run out of energy to move.");
+                        System.out.println("💀 GAME OVER!!");
+                        System.out.print("Would you like to try again? (true/false): ");
+                        tryAgain = scanner.nextBoolean();
+                        // Catch \n character in the buffer
+                        scanner.nextLine();
+                        // Check if the user wants to restart the game
+                        if (tryAgain) continue gameLoop;
+                        else break gameLoop;
+                    }
                 } while (true);
 
                 // Based on the decision, change energy level and print
@@ -279,7 +291,7 @@ public class EscapeFromVolcanicIsland {
             // Player earns 30 points
             points += 30;
 
-            // Zone 3:
+            // Zone 3: Broken Bridge
             System.out.println("After successfully completing the maze challenge, you begin moving forward.");
             System.out.println("You notice another trail of torches flickering in the darkness, guiding your path.");
             System.out.println("As you follow them, you spot something unexpected");
@@ -389,10 +401,8 @@ public class EscapeFromVolcanicIsland {
                     break gameLoop;
             }
             if (energyLevel <= 0) {
-                System.out.println("We knew from the beginning that rising " +
-                        "the temperature was going to weaken you, and know " +
-                        "after passing 2 rounds, you couldn't pass this round" +
-                        " so you are stranded here for ever.");
+                System.out.println("We knew from the beginning that the rising heat would wear you down.");
+                System.out.println("And now, after surviving two brutal zones, you couldn’t make it through this one.");
                 System.out.println("You’ve run out of energy to move.");
                 System.out.println("💀 GAME OVER!!");
                 System.out.print("Would you like to try again? (true/false): ");
@@ -403,22 +413,71 @@ public class EscapeFromVolcanicIsland {
                 if (tryAgain) continue;
                 else break;
             }
+            points += 35;
+
+            // Zone 4: Volcanic Doors
+            System.out.println("After passing the challenge, you see two massive doors standing before you.");
+            System.out.println("Above them, ancient carvings on the wall read:");
+            System.out.println("Zone 4: The Volcanic Doors 🔥🚪");
+            System.out.println("\nBoth doors will lead you off the island...");
+            System.out.println("But only one holds a chance to earn extra points. 💰");
+            System.out.println("Choose wisely.");
+            System.out.println("Type 'l' for the left door, or 'r' for the right door:");
+            char chosenDoor;
+            while (true) {
+                chosenDoor = scanner.nextLine().charAt(0);
+                if (chosenDoor == 'l' || chosenDoor == 'r') break;
+                else energyLevel -= 1;
+                if (energyLevel <= 0) {
+                    System.out.println("What a way, too loose...");
+                    System.out.println("You’ve run out of energy to move.");
+                    System.out.println("💀 GAME OVER!!");
+                    System.out.print("Would you like to try again? (true/false): ");
+                    tryAgain = scanner.nextBoolean();
+                    // Catch \n character in the buffer
+                    scanner.nextLine();
+                    // Check if the user wants to restart the game
+                    if (tryAgain) continue gameLoop;
+                    else break gameLoop;
+                }
+            }
+            if (chosenDoor == 'r') {
+                System.out.println("🎉 Congratulations! You chose wisely and earned an extra 25 points!");
+                // Extra 25 points
+                points += 25;
+            } else {
+                System.out.println("Unfortunately, no extra points for you this time... 😕");
+                System.out.println("But congratulations — you’ve completed the game! 🎉");
+            }
 
 
+            System.out.println("🚁 As you step through the door, a helicopter appears in the distance, slowly descending.");
+            System.out.println("Medical staff rush to greet you. They begin analyzing your condition to decide where you should be taken.");
+            if (energyLevel < 30) {
+                System.out.println("⚠️ You need immediate medical attention. We have to take you to the hospital.");
+                System.out.println("🏥 You’ve been admitted and will remain under care for the next 2 weeks.");
+                System.out.println("Two weeks have passed. You’re finally recovered and ready to collect your prize money! 💰");
+
+            } else if (energyLevel < 70) {
+                System.out.println("You're not in bad condition, but some medical attention would help.");
+                System.out.println("You'll stay in the hospital for a few days.");
+                System.out.println("\nA few days pass, and you're now feeling great.");
+                System.out.println("You're ready to leave and collect your prize money! 💰");
+
+            } else {
+                System.out.println("You’re completely fine — no medical attention is needed. ✅");
+                System.out.println("You’re free to go and collect your prize money! 💰");
+            }
+            // Collecting the prize money based on earned points
+            System.out.println("🎉 Your prize money is calculated as 1000 times the points you've collected.");
+            System.out.println("💰 So your total prize money is: $" + (points * 1000));
+            System.out.println("Once again, congratulations on escaping the island!");
 
 
-
-
-
-
-
-
-
-
-            break;
-
-
-
+            System.out.print("\n Would you like to play again? (true/false): ");
+            boolean playAgain = scanner.nextBoolean();
+            scanner.nextLine();
+            if (!playAgain) break;
         }
     }
 }
