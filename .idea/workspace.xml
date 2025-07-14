@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e706ac7-a239-4fc3-8298-c0176900cea5" name="Changes" comment="Finish home task for lecture class 6">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mentorlesson7/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mentorlesson7/CarSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mentorlesson7/Manufacturer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mahammad-Gurbanov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Mahammad-Gurbanov/HomeTask2.git&quot;,
+    &quot;accountId&quot;: &quot;b0a2b702-2ec0-47b4-bc54-4016d3deffdd&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2z2gdcCsnomdGirNu9Pi0JZRLSE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ClassTask2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ClassTask5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CoffeeShop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EscapeFromVolcanicIsland.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HomeTask2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentManagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.mentorclass6.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/mehemmedqurbanov/Desktop/Programming/Java/MentorLessonHW/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="ClassTask2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="classtasks.ClassTask2" />
+      <module name="mentorlessonhw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classtasks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeTask2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mentortask2.HomeTask2" />
+      <module name="mentorlessonhw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mentortask2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="mentorlessonhw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ClassTask2" />
+        <item itemvalue="Application.HomeTask2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e706ac7-a239-4fc3-8298-c0176900cea5" name="Changes" comment="" />
+      <created>1750934670600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750934670600</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Create the scene where the rules are displayed">
+      <option name="closed" value="true" />
+      <created>1751845131896</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751845131896</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Set the scene for Zone 1">
+      <option name="closed" value="true" />
+      <created>1751912484418</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751912484418</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Set scene for Zone 2">
+      <option name="closed" value="true" />
+      <created>1751917678338</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751917678338</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Set the scene for Zone 3">
+      <option name="closed" value="true" />
+      <created>1751934642422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751934642422</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Finish home task for lecture class 6">
+      <option name="closed" value="true" />
+      <created>1752241775698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752241775698</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create the scene where the rules are displayed" />
+    <MESSAGE value="Set the scene for Zone 1" />
+    <MESSAGE value="Set scene for Zone 2" />
+    <MESSAGE value="Set the scene for Zone 3" />
+    <MESSAGE value="Finish home task for lecture class 6" />
+    <MESSAGE value="Change package name to correct naming convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change package name to correct naming convention" />
+    <option name="LAST_CHUNK_COMMIT_MESSAGE" value="Change package name to correct naming convention" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
